@@ -1,6 +1,6 @@
 # Scala
 ## In einigen Nussschalen
 
-![scala-logo](https://scala-lang.org/resources/img/frontpage/scala-spiral.png)
+--?https://scala-lang.org/resources/img/frontpage/scala-spiral.png&size=auto 50%&position=bottom
 
 ---
