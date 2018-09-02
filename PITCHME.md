@@ -7,7 +7,7 @@
 
 @ul 
 
-- ## Scala kombiniert objektorientierte und funktionale Programmierung.
+- Scala kombiniert objektorientierte und funktionale Programmierung.
 - Scala steht für "scalable language"
 - Scala hat ein sehr starkes typsystem
 
@@ -80,28 +80,54 @@
 
 ## Setup
 
----
++++
 
 ### Installation
 
-#### Vorraussetzungen
-- Java 8
+#### Linux...
+##### Es ist kompliziert
 
-#### Linux:
-##### Debian
+#### MacOS
+´brew install sbt´
+
+#### Windows...
+##### IntelliJ
+
++++
+
+### Abhilfe!
+
+#### scastie! 
+scastie.scala-lang.org
+
+#### scalafiddle
+scalafiddle.io
+
+---
+
+### Basics
+
++++
+
+### REPL
+
+```scala
+
+scala> 2 + 2
+res0: Int = 4
+
+scala> res0 + 2
+res1: Int = 6
+
 ```
-echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
-sudo apt-get update
-sudo apt-get install sbt
-```
 
-##### Arch:
-`pacman install sbt`
++++
 
-#### MacOS:
-`brew install sbt@1`
 
-#### Windows
-##### Ääähm???
-=> IntelliJ
+
+
+
+
+
+
+
