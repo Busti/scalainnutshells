@@ -1,9 +1,8 @@
-@snap[north-west]
-
 # @color[#DC322F](Scala)
 ## In einigen Nussschalen
 
 ---
+@snap[north-west]
 
 ### Was ist @color[#DC322F](Scala)?
 
@@ -11,11 +10,12 @@
 
 - Scala kombiniert objektorientierte und funktionale Programmierung.
 - Scala steht für "scalable language"
-- Scala hat ein sehr starkes typsystem
+- Scala hat ein starkes typesystem
 
 @ulend
 
 +++
+@snap[north-west]
 
 ### Was ist @color[#DC322F](Scala) noch?
 
@@ -30,6 +30,7 @@
 @ulend
 
 +++
+@snap[north-west]
 
 ### Wer benutzt @color[#DC322F](Scala)?
 
@@ -47,6 +48,7 @@
 @ulend
 
 +++
+@snap[north-west]
 
 ### Warum @color[#DC322F](Scala)?
 
@@ -60,6 +62,7 @@
 @ulend
 
 +++
+@snap[north-west]
 
 ### Wofür @color[#DC322F](Scala)?
 
@@ -83,21 +86,24 @@
 ## Setup
 
 +++
+@snap[north-west]
 
-### Installation
+### Installation  
 
-#### Linux...
-##### Es ist kompliziert
+#### Linux...  
+##### Es ist kompliziert  
 
-#### MacOS
-´brew install sbt´
+#### MacOS  
+´brew install sbt´  
 
-#### Windows...
-##### IntelliJ
+#### Windows...  
+##### IntelliJ  
 
 +++
 
 ### Abhilfe!
+
+@snap[north-west]
 
 #### scastie! 
 scastie.scala-lang.org
