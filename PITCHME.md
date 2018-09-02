@@ -1,9 +1,9 @@
-# Scala
+# @color[#DC322F](Scala)
 ## In einigen Nussschalen
 
 ---
 
-# Was ist Scala?
+### Was ist @color[#DC322F](Scala)?
 
 @ul 
 
@@ -15,7 +15,7 @@
 
 +++
 
-# Was ist Scala noch?
+### Was ist @color[#DC322F](Scala) noch?
 
 @ul
 
@@ -29,7 +29,7 @@
 
 +++
 
-# Wer benutzt Scala?
+### Wer benutzt @color[#DC322F](Scala)?
 
 @ul
 
@@ -41,14 +41,12 @@
 - LinkedIn
 - Netflix
 - Verizon
-- AT&T
-- Apple
 
 @ulend
 
 +++
 
-# Warum @color[#DC322F]Scala?
+### Warum @color[#DC322F](Scala)?
 
 @ul
 
@@ -61,21 +59,49 @@
 
 +++
 
-# Wofür Scala?
+### Wofür @color[#DC322F](Scala)?
 
 @ul
 
-- # Hack
+ - Web
+   - Backend
+     - Traditionell (play, http4s, etc., slick)
+     - API's (play, akka-http, lagom, spray)
+   - Frontend
+     - scala.js
+ - Data-Sciene
+   - Streaming (akka, monix, hadoop)
+   - Datenverarbeitung (spark, kafka)
+ - Native Anwendungen (scala-native)
 
+@ulend
 
+---
 
+## Setup
 
+---
 
+### Installation
 
+#### Vorraussetzungen
+- Java 8
 
+#### Linux:
+##### Debian
+```
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+```
 
+##### Arch:
+`pacman install sbt`
 
+#### MacOS:
+`brew install sbt@1`
 
-
-
-
+#### Windows
+##### Ääähm???
+=> IntelliJ
