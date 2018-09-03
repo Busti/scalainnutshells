@@ -402,6 +402,19 @@ val weirdSum: (Int, Int) => Int =
 weirdSum(2, 5) // => 19
 ```
 
++++
+
+### Definition types
+
+```scala
+var a = 10 // Evaluates Immediately
+val b = 10 // Evaluates Immediately
+
+lazy val c = 1 // Evaluates once when first called
+
+def d = 1 // Evaluates for every call
+```
+
 ---
 
 # Flow Control
@@ -466,6 +479,16 @@ println(if (x == 10) "yeah" else "nope")
 val x = if (x == 10) "yeah" else "nope"
 ```
 
++++
+
+### For "Loops"
+
+```scala
+for (i <- 1 to 10) {
+  println(i)
+}
+```
+
 ---
 
 # Data Structures
@@ -507,9 +530,27 @@ s(0) // => false
 s(1) // => true
 ```
 
++++
+
+### Multiple parameter lists
+
+```scala
+def mutableSum(numbers: Int*): Int = {
+  var sum = 0
+  
+  for (i <- 0 until numbers.length) {
+    sum += numbers(i)
+  }
+  
+  sum
+}
+
+sumNumbers(1, 2, 3) // => 6
+```
+
 ---
 
-# Object Oriented Programming
+# Object oriented programming
 
 +++
 
@@ -526,6 +567,8 @@ val f = new Foo("Hello", 42)
 f.alpha // => Hello
 f.beta  // => 42
 ```
+
++++
 
 ```scala
 class Foo(val a: String, var b: Int)
@@ -545,7 +588,241 @@ class Foo(a: Int, b: Int) {
 
 +++
 
-### 
+### Member visibility
+
+```scala
+class Foo {
+  def bar = 10 // public
+  
+  private def baz = 10
+  
+  protected def qux = 10
+}
+```
+
++++
+
+### Inheritance
+
+```scala
+class Foo(a: Int) {
+  def bar = 10
+}
+
+class Bar extends Foo(20) {
+  def baz = 20
+  
+  override def bar = 30
+}
+```
+
+```scala
+class Bar extends Foo {
+  override def bar = super.bar
+}
+```
+
++++
+
+### Objects
+
+```scala
+object FooBar {
+  def bar = "Hello World!"
+  
+  val baz = "Test..."
+}
+
+FooBar.bar // => Hello World!
+```
+
++++
+
+### Companion objects
+
+```scala
+class Foo(a: Int) {
+  bar += 10
+}
+
+object Foo {
+  var bar = 20
+  
+  def createFoo(a: Int) = new Foo(a)
+}
+```
+
++++
+
+### The apply function
+
+```scala
+class Foo(val a: Int) {
+  def apply(b: Int) {
+    println(s"Class $b with arg $a")
+  }
+}
+
+object Foo {
+  def apply(c: Int) {
+    println(s"Object $c")
+  }
+}
+
+Foo(1) // Object 1
+
+val f = new Foo(2)
+
+f(3) // Class 3 with arg 2
+```
+
++++
+
+### Abstract class
+
+```scala
+abstract class Foo {
+  def test: String
+  
+  def test2 = "Implemented"
+}
+
+class Bar extends Foo {
+  def test = "Implemented" // No override or type annotation required
+}
+
+new Foo() // => error
+new Bar().test // => Implemented
+```
+
+### Traits
+
+```scala
+trait Foo {
+  def something = "foo"
+}
+
+trait Bar
+trait Baz
+
+class FooBar extends Foo with Bar with Baz
+
+new FooBar()
+```
+
+### Diamond inheritance
+
+```scala
+trait Base {
+  def foo: String
+}
+
+trait A extends Base {
+  def foo = "left"
+}
+
+trait B extends Base {
+  def foo = "right"
+}
+
+class Impl extends A with B { // error: Inherits conflicting members
+  override def foo = super[A].foo
+}
+```
+
++++
+
+### Case classes
+
+```scala
+case class Employee(name: String, phoneNumber: String)
+
+val e1 = Employee("George", "1234")
+
+u1.phoneNumber // => 1234
+
+val e2 = Employee("Jane", "6234")
+
+u1 == u2 // => false
+u1 == Employee("George", "1234")
+```
+
+---
+
+# Pattern Matching
+
++++
+
+### Basics
+
+```scala
+val e1 = Employee("George", "1234")
+val e2 = Employee("Jane", "6234")
+val e3 = Employee("Jane", "2346")
+
+def matchPerson(p: Person): String = {
+  case Employee("George", "1234") => "The George"
+  case Employee("Katie", number) => s"This Katies number is $number"
+  case Employee(n, p) => s"Any other user named $n with number $p"
+}
+```
+
++++
+
+### Typeful Matching
+
+```scala
+trait Base
+
+class A extends Base {
+  def foo = "foo"
+}
+
+class B extends Base {
+  def bar = "bar"
+}
+
+val something: Base = getSomething()
+
+something match {
+  case a: A => a.foo
+  case b: B => b.bar
+}
+```
+
++++
+
+### Conditional Matching
+
+```scala
+randInt(1, 10000) match {
+  case x if x > 100 => ???
+  case y if 0 to 1000 contains y => ???
+  case _ => ???
+}
+```
+
++++
+
+### Regex Matching
+
+```scala
+val email = r"(.*)@(.*)"
+
+someString match {
+  case email(name, domain) => s"got an email"
+  case _ => s"Not an email"
+}
+```
+
+---
+
+# Functional Progamming
+
++++
+
+
+
 
 
 
