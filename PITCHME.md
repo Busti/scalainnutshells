@@ -695,6 +695,8 @@ new Foo() // => error
 new Bar().test // => Implemented
 ```
 
++++
+
 ### Traits
 
 ```scala
@@ -709,6 +711,8 @@ class FooBar extends Foo with Bar with Baz
 
 new FooBar()
 ```
+
++++
 
 ### Diamond inheritance
 
