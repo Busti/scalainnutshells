@@ -821,7 +821,13 @@ someString match {
 
 +++
 
+### Collection Streaming
 
+val l = Seq(1, 2, 3)
+
+val fn: Int => Int = _ + 10
+
+l.map(fn) // => Seq(11, 12, 13)
 
 
 
